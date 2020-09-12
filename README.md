@@ -1,15 +1,15 @@
 # RE_Proc  
 
 ## 目录结构：
-RE2NFAepsilon
-包含正则表达式的处理以及正则表达式到NFA-epsilon的转换
-NFAepsilon2DFA
-包含NFA-epsilon到NFA以及NFA到DFA的转换
-DFA2MINIDFA
-包含DFA到DFA-mini的转换
+### RE2NFAepsilon  
+包含正则表达式的处理以及正则表达式到NFA-epsilon的转换  
+### NFAepsilon2DFA  
+包含NFA-epsilon到NFA以及NFA到DFA的转换  
+### DFA2MINIDFA  
+包含DFA到DFA-mini的转换  
 
 ## 部分算法说明：  
-1 正则表达式到NFA-epsilon的转换  
+### 1 正则表达式到NFA-epsilon的转换  
 
 中缀表达式到后缀表达式的转换方式  
 从中缀式的左端开始逐个读取字符x，逐序进行如下步骤：  
@@ -22,10 +22,10 @@ i)若当前栈s1的栈顶元素为'('，则将x直接压入栈s1；
 　　ii)若当前栈s1的栈顶元素不为'('，则将x与栈s1的栈顶元素比较，若x的优先级大于栈s1栈顶运算符优先级，则将x直接压入栈s1。否者，将栈s1的栈顶运算符弹出，压入栈s2中，直到栈s1的栈顶运算符优先级别低于（不包括等于）x的优先级，或栈s2的栈顶运算符为'('，此时再则将x压入栈s1;  
 ③在进行完②后，检查栈s1是否为空，若不为空，则将栈中元素依次弹出并压入栈s2中（不包括'#'）；  
 
-2 Thompson构造法:
+### 2 Thompson构造法:
 Thompson构造法在计算机科学中是指一个能将正则表达式转化为一个与之等价的非确定有限状态自动机（NFA）的算法。算法得到的NFA可以在编程中用于匹配一个正则表达式，这也是正则表达式引擎实现的基本思路之一。
 
-3 Subset construction算法
+### 3 Subset construction算法
 Subset construction算法概念:
 让构造得到的DFA的每个状态对应NFA的一个状态集合。DFA在读入a1a2...ana1a2...an之后到达的状态应该对应于相应的NFA从开始状态出发，沿着以a1a2...ana1a2...an为边的路径能达到的状态的集合。
 
@@ -36,7 +36,7 @@ Subset construction算法概念:
 ④遍历A,B,C,D...状态集合，将包含q0的状态设置为起始状态，包含F的状态设置为F结束状态。
 
  
-4 DFA到极小化DFA的转换
+### 4 DFA到极小化DFA的转换
 
 极小化DFA与Hopcroft算法
 
