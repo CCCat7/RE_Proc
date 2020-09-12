@@ -1,15 +1,14 @@
 # RE_Proc  
 
+目录结构：
 RE2NFAepsilon
 包含正则表达式的处理以及正则表达式到NFA-epsilon的转换
-
 NFAepsilon2DFA
 包含NFA-epsilon到NFA以及NFA到DFA的转换
-
 DFA2MINIDFA
 包含DFA到DFA-mini的转换
 
-
+说明：  
 1 正则表达式到NFA-epsilon的转换  
 
 中缀表达式到后缀表达式的转换方式  
